@@ -21,7 +21,9 @@ Table of Contents
 
 
 # Main
+
 ## Main-Oral
+
 1. ***[Understanding In-Context Learning via Supportive Pretraining Data](https://aclanthology.org/2023.acl-long.708.pdf)***        
 
     **摘要**：上下文学习（ICL）通过在推理时简单地演示少量的例子来提高语言模型在各种NLP任务中的表现。人们对ICL能力出现的原因不是很了解，因为模型从来没有在这种演示上进行过专门的训练。与之前探索ICL背后的隐性机制的工作不同，我们通过调查预训练数据来研究ICL。具体来说，我们首先采用一种迭代的、基于梯度的方法来寻找支持ICL的一小部分预训练数据。我们观察到，在这个小的子集上继续进行预训练可以显著提高模型的ICL能力，提高幅度高达18%。然后，我们将支持性子集与预训练数据的随机子集进行对比，发现：（1）支持ICL的预训练数据与下游任务的领域相关性不高。（2）支持性的预训练数据有更多很少出现的长尾符号。（3）支持性的预训练数据是具有挑战性的例子，其中长距离上下文的信息增益低于平均水平，表明学习纳入困难的长距离上下文会鼓励ICL。我们的工作迈出了第一步，通过分析实例级的预训练数据来理解ICL。我们的见解有可能在未来通过积极指导预训练数据的构建来提高语言模型的ICL能力。
@@ -85,7 +87,8 @@ Table of Contents
 4. ***[When Not to Trust Language Models: Investigating Effectiveness of Parametric and Non-Parametric Memories](https://aclanthology.org/2023.acl-long.546.pdf)***         
 
     **摘要**：尽管大型语言模型（LMs）在不同的任务上有令人印象深刻的表现，但在需要丰富的世界知识的任务上仍然很吃力，这意味着在其参数中编码大量的世界知识是很困难的。本文旨在通过对两个以实体为中心的开放领域QA数据集进行大规模的知识探测实验，了解LM在记忆事实知识方面的优势和局限：PopQA是我们的新数据集，包含14000个关于长尾实体的问题，而EntityQuestions是一个广泛使用的开放域QA数据集。我们发现，LM在处理不太常见的事实性知识时很吃力，而检索增强在这些情况下有很大帮助。另一方面，扩展主要提高了对常见知识的记忆，而对尾部事实性知识的记忆则没有明显的改善。基于这些发现，我们设计了一种新的检索增强方法，通过只在必要时检索非参数记忆来提高性能并降低推理成本。
-**领域**：开放领域QA；检索增强
+
+    **关键词**：开放领域QA；检索增强
 
 1. ***[Measuring Inductive Biases of In-Context Learning with Underspecified Demonstrations](https://aclanthology.org/2023.acl-long.632.pdf)***         
 
@@ -224,6 +227,7 @@ Table of Contents
 6. ***[Element-aware Summarization with Large Language Models: Expert-aligned Evaluation and Chain-of-Thought Method](https://aclanthology.org/2023.acl-long.482.pdf)***        
 
     **摘要**：自动摘要可生成包含源文件关键观点的简明摘要。作为新闻子领域最主流的数据集，CNN/DailyMail 和 BBC XSum 已被广泛用于性能基准测试。然而，这些数据集的参考摘要存在一定的噪声，主要表现在事实幻觉和信息冗余方面。为了应对这一挑战，我们首先按照拉斯韦尔提出的 "拉斯韦尔传播模型"，注释了新的专家写作要素感知测试集，使参考摘要能够客观、全面地关注更细粒度的新闻要素。利用新的测试集，我们观察到了 LLMs 令人惊讶的零样本摘要能力，这解决了之前工作中 LLMs 零样本摘要的人工偏好和自动评估指标结果不一致的问题。此外，我们还提出了一种 "思维链摘要"（SumCoT）技术，诱导 LLM 逐步生成摘要，帮助他们将源文件中更多细粒度的细节整合到最终摘要中，从而与人类的写作思维相关联。实验结果表明，在两个数据集上，我们的方法在 ROUGE-L 中分别以 +4.33/+4.77 的成绩优于最先进的微调 PLM 和零样本 LLM。数据集和代码可通过 https://github.com/Alsace08/SumCoT 公开获取。
+
     **关键词**：自动摘要；摘要思维链
 
 7. ***[A Length-Extrapolatable Transformer](https://aclanthology.org/2023.acl-long.816.pdf)***        
