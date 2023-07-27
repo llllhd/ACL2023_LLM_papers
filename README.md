@@ -190,398 +190,403 @@ Table of Contents
     **关键词**：多语言；CLIP
 
 ## Main-Poster
+1. ***[Is GPT-3 a Good Data Annotator?](https://aclanthology.org/2023.acl-long.626.pdf)***
+   
+   **摘要**：数据标注是对可用于训练机器学习模型的数据进行标注的过程。高质量的标注至关重要，因为它能让模型学习输入数据与所需输出之间的关系。GPT-3 是 OpenAI 开发的一个大型语言模型，在各种 NLP 任务中都表现出了令人印象深刻的zero-shot和few-shot性能。因此，我们很自然地想知道它是否能用于为 NLP 任务有效地标注数据。在本文中，我们将 GPT-3 与传统的数据注释方法进行了比较，并分析了它在一系列任务中的输出结果，从而评估了 GPT-3 作为数据标注器的性能。通过分析，我们希望深入了解 GPT-3 作为 NLP 通用数据标注器的潜力。
+   
+   **关键词**：自动数据标注；评估
 
-1. ***[Can LMs Learn New Entities from Descriptions? Challenges in Propagating Injected Knowledge](https://aclanthology.org/2023.acl-long.300.pdf)***        
+2. ***[Can LMs Learn New Entities from Descriptions? Challenges in Propagating Injected Knowledge](https://aclanthology.org/2023.acl-long.300.pdf)***        
 
     **摘要**：预训练的语言模型（LMs）被用于知识密集型任务，如问题回答，但随着世界的变化，他们的知识会不断过时。之前的工作研究了对语言模型的定向更新，注入个别事实并评估模型是否学习了这些事实，同时不改变对其他背景的预测。我们向前迈进了一步，研究LM根据注入的事实（或传播这些事实）进行推断的能力：例如，在得知某物是一个电视节目后，LM是否预测你可以观看它？我们用两个cloze-style任务来研究这个问题：一个是现有的关于新实体的真实世界句子的数据集（ECBD），另一个是一个新的受控基准，其中人工设计的模板要求对注入的知识进行不同程度的推理。令人惊讶的是，我们发现现有的更新知识的方法（基于梯度的微调和对这种方法的修改）几乎没有显示出注入知识的传播。这些方法只有在注入的事实和目标推论之间存在词汇重叠的情况下，才会提高cloze实例的性能。然而，在LM的上下文中预置实体定义可以提高所有设置的性能，这表明参数更新方法在知识注入方面还有很大的空间。
 
     **关键词**：知识注入
 
-1. ***[Should you marginalize over possible tokenizations?](https://aclanthology.org/2023.acl-short.1.pdf)***        
+3. ***[Should you marginalize over possible tokenizations?](https://aclanthology.org/2023.acl-short.1.pdf)***        
 
     **摘要**：自回归语言模型（LMs）将标记序列映射为概率。计算任何字符串（如英语句子）的概率的通常做法是，首先将其转化为由模型打分的标记序列。然而，代表任何给定字符串的令牌序列有指数级的数量。为了真正计算一个字符串的概率，应该对所有标记化进行边际化处理，这通常是难以做到的。在这里，我们分析了忽略边际化的做法是否合理。为此，我们设计了一种基于重要性抽样的算法，使我们能够计算出边际概率的估计值，并将其与一系列最先进的模型和数据集中的默认程序进行比较。我们的结果表明，在大多数情况下，对数可能性的差距不超过0.5％，但对于具有长的复杂词汇的数据，它变得更加明显。
 
     **关键词**：边际化；重要性抽样算法
 
-1. ***[Let Me Check the Examples: Enhancing Demonstration Learning via Explicit Imitation](https://aclanthology.org/2023.acl-short.93.pdf)***        
+4. ***[Let Me Check the Examples: Enhancing Demonstration Learning via Explicit Imitation](https://aclanthology.org/2023.acl-short.93.pdf)***        
 
     **摘要**：演示学习的目的是通过在few-shot设置中提供回答的演示来指导提示预测。尽管取得了可喜的成果，但现有的工作只是将回答过的例子作为演示连接到提示模板（包括原始上下文），而没有任何额外的操作，忽略了提示-演示的依赖关系。此外，先前的研究发现，随机替换演示的标签会略微损害性能，说明模型不能正确学习演示带来的知识。受人类学习过程的启发，在本文中，我们引入了模仿演示学习（Imitation DEMOnstration learning），通过明确地模仿人类的审查行为来加强演示学习，其中包括：(1)对比性学习机制，集中学习相似的演示。(2)演示-标签再预测方法，巩固已知知识。实验结果表明，我们提出的方法在14个分类语料库中的5个取得了最先进的性能。进一步的研究还证明，Imitation-Demo加强了提示和演示之间的关联，这可以为探索演示学习的工作方式提供基础。
 
     **关键词**：演示学习；模仿演示学习（Imitation-Demo）
 
-1. ***[HiFi: High-Information Attention Heads Hold for Parameter-Efficient Model Adaptation](https://aclanthology.org/2023.acl-long.475.pdf)***        
+5. ***[HiFi: High-Information Attention Heads Hold for Parameter-Efficient Model Adaptation](https://aclanthology.org/2023.acl-long.475.pdf)***        
 
     **摘要**：为了充分发挥大规模预训练语言模型（PLMs）在下游任务中的优势，对PLMs的全部参数进行微调已经成为一种普遍的适应范式。然而，由于PLM的参数规模较大，在数据稀缺和资源有限的情况下，这种模式带来了更新效率低下和微调资源过度消耗的问题。为了缓解这些问题，在本文中，我们提出了一种参数高效的微调方法HiFi，即只对特定任务的高信息量和强相关的注意力头进行微调。为了寻找那些重要的注意力头，我们开发了一个新的框架来分析头的有效性。具体来说，我们首先从信息丰富度和相关性两个角度将各头之间的关系建模为一个图，然后应用PageRank算法来确定各头的相对重要性。在GLUE基准上进行的大量实验证明了我们方法的有效性，并表明HiFi获得了比先前基准更先进的性能。
 
     **关键词**：参数高效微调方法；信息丰富度与相关性
 
-1. ***[Element-aware Summarization with Large Language Models: Expert-aligned Evaluation and Chain-of-Thought Method](https://aclanthology.org/2023.acl-long.482.pdf)***        
+6. ***[Element-aware Summarization with Large Language Models: Expert-aligned Evaluation and Chain-of-Thought Method](https://aclanthology.org/2023.acl-long.482.pdf)***        
 
     **摘要**：自动摘要可生成包含源文件关键观点的简明摘要。作为新闻子领域最主流的数据集，CNN/DailyMail 和 BBC XSum 已被广泛用于性能基准测试。然而，这些数据集的参考摘要存在一定的噪声，主要表现在事实幻觉和信息冗余方面。为了应对这一挑战，我们首先按照拉斯韦尔提出的 "拉斯韦尔传播模型"，注释了新的专家写作要素感知测试集，使参考摘要能够客观、全面地关注更细粒度的新闻要素。利用新的测试集，我们观察到了 LLMs 令人惊讶的零样本摘要能力，这解决了之前工作中 LLMs 零样本摘要的人工偏好和自动评估指标结果不一致的问题。此外，我们还提出了一种 "思维链摘要"（SumCoT）技术，诱导 LLM 逐步生成摘要，帮助他们将源文件中更多细粒度的细节整合到最终摘要中，从而与人类的写作思维相关联。实验结果表明，在两个数据集上，我们的方法在 ROUGE-L 中分别以 +4.33/+4.77 的成绩优于最先进的微调 PLM 和零样本 LLM。数据集和代码可通过 https://github.com/Alsace08/SumCoT 公开获取。
     **关键词**：自动摘要；摘要思维链
 
-2. ***[A Length-Extrapolatable Transformer](https://aclanthology.org/2023.acl-long.816.pdf)***        
+7. ***[A Length-Extrapolatable Transformer](https://aclanthology.org/2023.acl-long.816.pdf)***        
 
     **摘要**：位置建模在Transformers中起着关键作用。在本文中，我们专注于长度外推，即在评估较长序列的同时对短文进行训练。我们定义注意力分辨率作为外推的指标。然后，我们提出两个设计来改善Transformers的上述指标。具体来说，我们引入了一个相对位置嵌入来明确地最大化注意力分辨率。此外，我们在推理过程中使用顺时针方向的因果注意来提高分辨率。我们用语言建模评估了不同的Transformer变体。实验结果表明，我们的模型在插值和外推设置中都取得了强大的性能。代码将在<https://aka.ms/LeX-Transformer>上提供。
 
     **关键词**：长度外推
 
-3. ***[Towards Understanding Chain-of-Thought Prompting: An Empirical Study of What Matters](https://aclanthology.org/2023.acl-long.153.pdf)***        
+8. ***[Towards Understanding Chain-of-Thought Prompting: An Empirical Study of What Matters](https://aclanthology.org/2023.acl-long.153.pdf)***        
 
     **摘要**：思维链（CoT）提示可以极大地提高大型语言模型（LLM）的多步骤推理能力。CoT通过在演示中提供一系列的推理步骤，明确地鼓励LLM为解决一个问题而产生中间理由。尽管它很成功，但人们对是什么使CoT提示有效，以及演示的推理步骤的哪些方面有助于它的表现仍然了解甚少。在本文中，我们表明CoT推理即使在无效的演示中也是可能的——在各种指标下，用无效的推理步骤进行提示可以达到使用CoT获得的性能的80-90％以上，同时在推理过程中仍然会产生连贯的推理线。进一步的实验表明，理由的其他方面，如与查询相关和正确的推理步骤排序，对于有效的CoT推理来说更为重要。总的来说，这些发现既加深了我们对CoT提示的理解，也为LLMs学习上下文推理的能力提出了新问题。
 
     **关键词**：思维链；上下文推理
 
-4. ***[Model-Generated Pretraining Signals Improves Zero-Shot Generalization of Text-to-Text Transformers](https://aclanthology.org/2023.acl-long.724.pdf)***        
+9.  ***[Model-Generated Pretraining Signals Improves Zero-Shot Generalization of Text-to-Text Transformers](https://aclanthology.org/2023.acl-long.724.pdf)***        
 
     **摘要**：本文探讨了模型产生的信号在改善文本到文本Transformer（如T5）的zero-shot泛化方面的有效性。我们研究了各种设计，利用辅助模型对T5进行预训练，为主模型去噪构建更具挑战性的标记替代物。研究的关键方面包括解码目标、RTD头的位置和掩码模式。基于这些研究，我们开发了一个新的模型，METRO-T0，它使用重新设计的ELECTRA-Style预训练策略进行预训练，然后在混合的NLP任务上进行prompt-finetuned。METRO-T0在提示的NLP基准上的表现优于所有类似规模的基准，如：T0 Eval和MMLU，并且仅用8%的参数就能与最先进的T0-11B模型相媲美。我们对模型的神经激活和参数敏感性的分析表明，METRO-T0的有效性源于参数的更均衡贡献和对其能力的更好利用。代码和模型检查点在[https://github.com/gonglinyuan/metro\_t0](https://github.com/gonglinyuan/metro\_t0)。
 
     **关键词**：预训练模型
 
-5. ***[Benchmarking Large Language Model Capabilities for Conditional Generation](https://aclanthology.org/2023.acl-long.511.pdf)***        
+10. ***[Benchmarking Large Language Model Capabilities for Conditional Generation](https://aclanthology.org/2023.acl-long.511.pdf)***        
 
     **摘要**：预训练的大型语言模型（PLMs）是自然语言处理中大多数新发展的基础。它们已经将该领域从特定应用的模型管道转移到适应各种任务的单一模型上。像GPT-3或PaLM这样的自回归PLM以及像few-shot learning这样的相关技术，还将输出模式转移到了生成而不是分类或回归。尽管它们的使用无处不在，但当这些模型被引入时，语言模型的生成质量很少被评估。此外，目前还不清楚现有的生成任务——虽然它们可以用来在高水平上比较系统——与人们一直在采用它们的真实世界的用例有什么关系。在这项工作中，我们讨论了如何使现有的特定应用的生成基准适用于PLM，并对PLM在自然语言生成任务中的局限性和能力进行了深入的实证研究，如规模、架构、输入和输出语言等方面。我们的研究结果表明，PLM在对不同数据制度的适用性和对多种语言的通用性方面有所不同。它们进一步告诉实践者，在给定的生成任务设置中应该使用哪种PLMs。我们分享了在开发新的PLM过程中对生成能力进行基准测试时应考虑的最佳做法。
 
     **关键词**：基准测试
 
-6. ***[Parallel Context Windows for Large Language Models](https://aclanthology.org/2023.acl-long.352.pdf)***        
+11. ***[Parallel Context Windows for Large Language Models](https://aclanthology.org/2023.acl-long.352.pdf)***        
 
     **摘要**：当应用于处理长文本时，大型语言模型（LLMs）受到其上下文窗口的限制。现有的解决这一限制的努力涉及训练专门的架构，不容易应用于现成的LLM。我们提出了平行上下文窗口（PCW），这是一种无需进一步训练就能缓解任何现成的LLM的上下文窗口限制的方法。该方法的关键是将一个长的上下文分割成几块（"窗口"），限制注意力机制只在每个窗口内应用，并在各窗口内重新使用位置嵌入。我们的主要结果测试了PCW方法在上下文学习中的作用，模型的规模在7.5亿到1780亿个参数之间，并显示出对具有不同输入和输出空间的任务的实质性改进。我们在长上下文窗口可能有益的其他环境中显示了额外的好处：多跳问题和具有多个检索文件的检索增强型问题回答。我们的结果强调平行上下文窗口是一种有前景的方法，可以在一系列需要长文本序列的环境中应用现成的LLMs。我们在<https://github.com/ai21labs/parallel-context-windows>上公开了我们的代码。
 
     **关键词**：缓解上下文限制；平行上下文窗口
 
-7. ***[WebCPM: Interactive Web Search for Chinese Long-form Question Answering](https://aclanthology.org/2023.acl-long.499.pdf)***        
+12. ***[WebCPM: Interactive Web Search for Chinese Long-form Question Answering](https://aclanthology.org/2023.acl-long.499.pdf)***        
 
     **摘要**：长式问题回答（LFQA）旨在用详细的、长达一段的回答来回答复杂的、开放式的问题。LFQA的事实范式需要两个过程：信息检索，即搜索相关的支持事实，以及信息综合，即把这些事实整合成一个连贯的答案。在本文中，我们介绍了WebCPM，这是第一个中文LFQA数据集。WebCPM的一个独特的特点是它的信息检索是基于交互式网络搜索的，它与搜索引擎实时接触。继WebGPT之后，我们开发了一个网络搜索界面。我们招募注释者，使用我们的界面搜索相关信息，然后回答问题。同时，我们的注释者的网络搜索行为会被记录下来。我们总共收集了5500个高质量的问题-答案对，以及15372个支持性事实和125954个网络搜索行为。我们对预先训练好的语言模型进行微调，以模仿人类的网络搜索行为，并根据收集的事实生成答案。我们的LFQA管道建立在这些微调的模型上，在我们的数据集和DuReader上，分别有32.5％和47.5％的情况下产生的答案不比人类写的差。该界面、数据集和代码在https://github.com/thunlp/WebCPM。
 
     **关键词**：LFQA；中文数据集；模仿人类搜索行为
 
-8. ***[Ellipsis-Dependent Reasoning: a New Challenge for Large Language Models](https://aclanthology.org/2023.acl-short.4.pdf)***        
+13. ***[Ellipsis-Dependent Reasoning: a New Challenge for Large Language Models](https://aclanthology.org/2023.acl-short.4.pdf)***        
 
     **摘要**：我们为大型语言模型提出了一个新的挑战：依赖省略号的推理。我们定义了几种配对例子的结构，其中一个省略号的例子与它的非省略号的对应例子相匹配，并提出了一个需要解决省略号的问题。测试结果显示，最好的模型在非省略号的例子上表现良好，但在除最简单的省略号结构之外的所有例子上都很困难。
 
     **关键词**：依赖省略号的推理
 
-9. ***[In-Context Analogical Reasoning with Pre-Trained Language Models](https://aclanthology.org/2023.acl-long.109.pdf)***        
+14. ***[In-Context Analogical Reasoning with Pre-Trained Language Models](https://aclanthology.org/2023.acl-long.109.pdf)***        
 
     **摘要**：类比推理是人类认知的一种基本能力，它使我们能够通过将新情况与过去的经验联系起来对其进行抽象推理。虽然它被认为是人工智能系统稳健推理的关键，但传统的方法需要大量的训练和/或硬编码领域知识才能应用到基准任务中。受认知科学研究的启发，我们探索了使用基于语言的直观抽象来支持人工智能系统的类推。具体来说，我们将大型预训练的语言模型（PLMs）应用于视觉上的瑞文渐进矩阵（RPM），这是一个常见的关系推理测试。通过简单地将问题的感知特征编码为语言形式，我们发现PLMs表现出惊人的zero-shot关系推理能力，超过了人类的表现，接近于基于视觉的监督方法。我们探索了不同的编码，这些编码对任务特征的抽象程度不同，发现更高层次的抽象会进一步加强PLM的类比推理。我们的详细分析揭示了模型的复杂性、语境中的学习以及解决RPM任务的先验知识的作用。
 
     **关键词**：类比推理；领域知识硬编码
 
-10. ***[Dissecting Transformer Length Extrapolation via the Lens of Receptive Field Analysis](https://aclanthology.org/2023.acl-long.756.pdf)***        
+15. ***[Dissecting Transformer Length Extrapolation via the Lens of Receptive Field Analysis](https://aclanthology.org/2023.acl-long.756.pdf)***        
 
     **摘要**：长度外推法允许在短序列上训练转化器语言模型，在对更长的序列进行测试时，可以保留困惑。一种相对位置嵌入设计，即ALiBi，迄今已得到最广泛的应用。我们通过接受域分析的视角来剖析ALiBi，该分析由一个新的累积归一化梯度工具授权。接受场的概念进一步使我们能够修改虚无的Sinusoidal位置嵌入，创造出Sandwich，这是第一个无参数的相对位置嵌入设计，真正的长度信息使用比训练序列长。Sandwich与KERPLE和T5共享相同的对数衰减的时间偏差模式，具有可学习的相对位置嵌入；这些阐明了未来可推断的位置嵌入设计。
 
     **关键词**：长度外推；相对位置嵌入设计
 
-11. ***[Training Trajectories of Language Models Across Scales](https://aclanthology.org/2023.acl-long.767.pdf)***        
+16. ***[Training Trajectories of Language Models Across Scales](https://aclanthology.org/2023.acl-long.767.pdf)***        
 
     **摘要**：扩大语言模型的规模带来了前所未有的性能提升，但人们对模型变大后训练的动态变化了解甚少。不同规模的语言模型在预训练中是如何学习的？为什么更大的语言模型会表现出更理想的行为？在本文中，我们分析了不同规模的OPT模型（Zhang等人，2022）的中间训练检查点——从125M到175B的参数——下一个标记预测、序列级生成和下游任务。我们发现：1）在给定的困惑和独立于模型大小的情况下，类似的训练标记子集看到了最显著的损失减少，其余的停滞不前或表现出双倍的下降行为（Nakkiran等人、2020）；2）在训练的早期，所有的模型都学会减少包含幻觉的语法序列的困惑，小的模型在这种次优分布中停止，大的模型最终学会给这些序列分配较低的概率；3）困惑是BIG-Bench的74个多选任务中上下文学习表现的有力预测因素，这与模型大小无关。总之，这些结果表明，与模型规模或训练计算相比，困惑度对模型行为的预测作用更大。
 
     **关键词**：不同规模模型训练轨迹
 
-12. ***[Distilling Script Knowledge from Large Language Models for Constrained Language Planning](https://aclanthology.org/2023.acl-long.236.pdf)***        
+17. ***[Distilling Script Knowledge from Large Language Models for Constrained Language Planning](https://aclanthology.org/2023.acl-long.236.pdf)***        
 
     **摘要**：在日常生活中，人类经常通过遵循以目标为导向的脚本形式的分步指示来计划他们的行动。以前的工作利用语言模型（LMs）来计划定型活动的抽象目标（例如，"做一个蛋糕"），但对具有多面约束的更具体的目标（例如，"为糖尿病患者做一个蛋糕"）却没有研究。在本文中，我们首次定义了约束性语言规划的任务。我们提出了一种 "先生成后过滤 "的方法来改进这个任务的大型语言模型（LLMs），并使用它来提炼出一个新的约束性语言规划数据集--Coscript，它由55000个脚本组成。实证结果表明，我们的方法明显提高了大型语言模型的约束性语言规划能力，尤其是在约束的忠实度方面。此外，Coscript被证明在赋予较小的LM以约束性语言规划能力方面相当有效。
 
     **关键词**：蒸馏；脚本数据集；约束性语言规划能力
 
-13. ***[MultiInstruct: Improving Multi-Modal Zero-Shot Learning via Instruction Tuning](https://aclanthology.org/2023.acl-long.641.pdf)***        
+18. ***[MultiInstruct: Improving Multi-Modal Zero-Shot Learning via Instruction Tuning](https://aclanthology.org/2023.acl-long.641.pdf)***        
 
     **摘要**：指令微调是一种新的学习范式，在通过指令指定的任务上对预先训练好的语言模型进行微调，在各种自然语言处理任务上显示出有希望的zeor-shot性能。然而，它还没有在视觉和多模态任务中得到探索。在这项工作中，我们介绍了MultiInstruct，这是第一个多模态指令微调基准数据集，由62个不同的多模态任务组成，以统一的序列对序列格式，涵盖10大类。这些任务来自21个现有的开源数据集，每个任务都配备了5个专家编写的指令。我们将OFA作为多模态指令调整的基础预训练模型，为了进一步提高其zero-shot性能，我们探索了多种转移学习策略，以利用大规模的自然指令数据集。实验结果表明，在各种未见过的多模态任务上有很强的zero-shot性能，以及从纯文本指令数据集迁移学习的好处。我们还设计了一个新的评估指标——敏感性，以评估该模型对各种指令的敏感程度。我们的结果表明，在一组不同的任务和指令上对模型进行微调，可以降低对每个任务的指令变化的敏感性。
 
     **关键词**：指令微调；多模态；数据集；评估指标
 
-14. ***[Black-box language model explanation by context length probing](https://aclanthology.org/2023.acl-short.92.pdf)***        
+19. ***[Black-box language model explanation by context length probing](https://aclanthology.org/2023.acl-short.92.pdf)***        
 
     **摘要**：大型语言模型越来越广泛地被采用，凸显了提高其可解释性的必要性。我们提出了*语境长度探测*，这是一种新的因果语言模型的解释技术，基于跟踪模型的预测作为可用语境长度的函数，并允许为不同的语境分配*不同的重要性分数*。该技术与模型无关，除了计算标记级的概率外，不依赖对模型内部的访问。我们将上下文长度探测法应用于大型预训练语言模型，并提供一些初步的分析和见解，包括研究长程依赖的潜力。该方法的[源代码](https://github.com/cifkao/context-probing/)和[互动演示](https://cifkao.github.io/context-probing/)可供查阅。
 
     **关键词**：可解释性研究
 
-15. ***[Contrastive Novelty-Augmented Learning: Anticipating Outliers with Large Language Models](https://aclanthology.org/2023.acl-long.658.pdf)***        
+20. ***[Contrastive Novelty-Augmented Learning: Anticipating Outliers with Large Language Models](https://aclanthology.org/2023.acl-long.658.pdf)***        
 
     **摘要**：在许多任务设置中，文本分类模型可能会遇到它们无法正确预测的新类别的例子。选择性预测，即模型放弃对低置信的例子的预测，提供了一个可能的解决方案，但现有的模型往往对未见过的类别过于自信。为了弥补这种过度自信，我们引入了对比性新颖性增强学习（Contrastive Novelty-Augmented Learning，CoNAL），这是一种分两步走的方法，生成代表新颖类的OOD例子，然后进行训练以降低对它们的置信。首先，我们通过两次提示大型语言模型来生成OOD例子：我们提示它列举相关的新类，然后从每个新类中生成符合任务格式的例子。其次，我们用一个新的对比目标来训练分类器，鼓励对生成的OOD例子的置信低于训练例子。当用CoNAL训练时，分类器在检测和放弃新类例子的能力上比以前的方法平均提高了2.3％，在准确率-覆盖率曲线（AUAC）下的准确率为5.5％，在4个NLP数据集上的AUROC为5.5％，对分布内准确率没有影响。
 
     **关键词**：文本分类
 
-16. ***[Token-wise Decomposition of Autoregressive Language Model Hidden States for Analyzing Model Predictions](https://aclanthology.org/2023.acl-long.562.pdf)***        
+21. ***[Token-wise Decomposition of Autoregressive Language Model Hidden States for Analyzing Model Predictions](https://aclanthology.org/2023.acl-long.562.pdf)***        
 
     **摘要**：虽然最近人们对研究为什么基于Transformer的大型语言模型会以这样的方式进行预测很感兴趣，但每一层内进行的复杂计算使其行为变得有些不透明。为了减轻这种不透明性，这项工作提出了基于每个初始输入标记的自回归语言模型的最终隐藏状态的线性分解，这对几乎所有当代的Transformer架构都是准确的。这种分解允许定义概率分布，以消除特定输入标记的贡献，这可以用来分析它们对模型概率的影响，在一连串即将到来的单词中，只需从模型中向前传递一次。使用下一个词概率的变化作为重要性的衡量标准，这项工作首先研究了哪些语境词对语言模型预测的贡献最大。回归实验表明，基于Transformer的语言模型在进行下一个词的预测时，主要依赖搭配关联，其次是语言因素，如句法依赖和核心推理关系。此外，使用这些措施来预测句法依赖性和核心词提及跨度的分析表明，搭配关联和同一标记的重复在很大程度上解释了语言模型对这些任务的预测。
 
     **关键词**：可解释性研究
 
-17. ***[Z-ICL: Zero-Shot In-Context Learning with Pseudo-Demonstrations](https://aclanthology.org/2023.acl-long.129.pdf)***        
+22. ***[Z-ICL: Zero-Shot In-Context Learning with Pseudo-Demonstrations](https://aclanthology.org/2023.acl-long.129.pdf)***        
 
     **摘要**：虽然大型语言模型可以使用zeor-shot学习和few-shot学习，但在没有示范的情况下，性能会明显下降。在本文中，我们介绍了Z-ICL，一种新的zero-shot学习方法，它通过使用原始文本语料库为给定的测试输入构建伪演示来弥补这一差距。具体来说，伪演示的构建方法是：（1）从语料库中找到与测试输入最近的邻居，并将其与随机任务标签配对；（2）应用一套技术来减少模型从所产生的演示中直接复制的数量。对9个分类数据集的评估表明，Z-ICL比以前的零zero-shot方法要好得多，并且在few-shot的情况下，与带有标签的训练数据的上下文学习相当。总的来说，Z-ICL为一个模型的zero-shot性能水平提供了一个明显更高的估计，并支持未来开发更好的伪演示的努力，进一步提高zero-shot的结果。
 
     **关键词**：zero-shot方法
 
-18. ***[Sequence Parallelism: Long Sequence Training from System Perspective](https://aclanthology.org/2023.acl-long.134.pdf)***        
+23. ***[Sequence Parallelism: Long Sequence Training from System Perspective](https://aclanthology.org/2023.acl-long.134.pdf)***        
 
     **摘要**：Transformer在各种任务上取得了令人鼓舞的结果。然而，相对于序列长度而言，自注意力存在着二次内存要求。现有的工作侧重于从算法的角度减少时间和空间的复杂度。在这项工作中，我们提出了序列并行，一种内存效率高的并行，以代替从系统角度解决这个问题。我们的方法与大多数现有的并行机制（如数据、管道和张量并行）兼容，这意味着我们的序列并行使4D并行成为可能。更重要的是，我们不再需要一个单一的设备来容纳整个序列。此外，利用具有线性复杂性的高效注意力，我们的序列并行性使我们能够用无限长的序列来训练Transformer。具体来说，我们将输入序列分成多个块，并将每个块送入其相应的设备（即GPU）。为了计算注意力的输出，我们将环形通信与自注意力的计算结合起来，提出了环形自注意力（RSA）。实验表明，序列并行性在随批处理规模和序列长度扩展时表现良好。与张量并行相比，当扩展到64个NVIDIA P100 GPU时，我们的方法分别实现了13.7美元和3.0美元的最大批量大小和序列长度。通过高效关注，序列可以处理超过114K个标记的序列，这比现有的高效关注工作在单个设备上保持整个序列的时间长27美元。
 
     **关键词**：计算复杂度；序列并行；系统角度
 
-19. ***[Towards Adaptive Prefix Tuning for Parameter-Efficient Language Model Fine-tuning](https://aclanthology.org/2023.acl-short.107.pdf)***        
+24. ***[Towards Adaptive Prefix Tuning for Parameter-Efficient Language Model Fine-tuning](https://aclanthology.org/2023.acl-short.107.pdf)***        
 
     **摘要**：在各种下游任务中，对预先训练好的大型语言模型进行全参数微调的成本过高。因此，参数高效微调引起了人们的关注，这种微调只对冻结预训练模型的少数特定任务参数进行优化。在这项工作中，我们将重点放在前缀调整上，即仅优化插入Transformer层的连续前缀向量（即伪标记）。基于所学到的语法和语义表征在不同层中有很大差异这一观察，我们认为自适应前缀将比固定前缀更适合每一层，从而使微调更加有效和高效。因此，我们提出了自适应前缀调整（APT），通过门机制在细粒度标记层和粗粒度层两个方面调整前缀。在SuperGLUE和NER数据集上的实验表明了APT的有效性。此外，以门作为探测，我们验证了可变前缀的效率和有效性。
 
     **关键词**：参数高效微调；自适应前缀调整
 
-20. ***[Knowledge of cultural moral norms in large language models](https://aclanthology.org/2023.acl-long.26.pdf)***        
+25. ***[Knowledge of cultural moral norms in large language models](https://aclanthology.org/2023.acl-long.26.pdf)***        
 
     **摘要**：不同文化背景下的道德规范各不相同。最近的一项研究表明，英语大型语言模型包含类似人类的道德偏差，但这些研究通常没有考察不同文化背景下的道德变异。我们研究了单语英语模型包含不同国家道德规范知识的程度。我们考虑了两个层面的分析：1）语言模型是否捕捉到了不同国家在诸如“同性恋”和“离婚”等各种话题上的细粒度道德差异；2）语言模型是否捕捉到了文化多样性以及全球各地人们在道德判断上趋于分歧或一致的共同倾向。我们利用世界价值观调查（涵盖55个国家）和PEW全球道德调查（涵盖40个国家）的两个公共数据集进行分析。我们发现，预训练的英语语言模型对各国经验道德规范的预测比之前报告的英语道德规范更差。然而，对调查数据的语言模型进行微调改善了对各国的推断，但代价是对英语道德规范的估计不够准确。我们讨论了将文化知识纳入道德规范自动推断的意义和挑战。
 
     **关键词**：语言模型道德规范
 
-21. ***[Reasoning with Language Model Prompting: A Survey](https://aclanthology.org/2023.acl-long.294.pdf)***        
+26. ***[Reasoning with Language Model Prompting: A Survey](https://aclanthology.org/2023.acl-long.294.pdf)***        
 
     **摘要**：推理作为解决复杂问题的基本能力，可以为医疗诊断、谈判等各种实际应用提供后台支持。本文全面考察了利用语言模型提示进行推理的前沿研究。我们通过比较和总结介绍了相关研究工作，并提供了系统资源以帮助初学者。我们还讨论了出现这种推理能力的潜在原因，并强调了未来的研究方向。资源地址<https://github.com/zjunlp/Prompt4ReasoningPapers>（定期更新）。
 
     **关键词**：综述；语言模型推理
 
-22. ***[Training-free Neural Architecture Search for RNNs and Transformers](https://aclanthology.org/2023.acl-long.142.pdf)***        
+27. ***[Training-free Neural Architecture Search for RNNs and Transformers](https://aclanthology.org/2023.acl-long.142.pdf)***        
 
     **摘要**：神经架构搜索(NAS)可以自动创建新的有效的神经网络架构，为人工设计复杂架构的费力过程提供了替代方案。然而，传统的NAS算法速度较慢，需要巨大的计算能力。最近的研究调查了图像分类架构的免训练NAS指标，大大加快了搜索算法的速度。在本文中，我们研究了针对语言建模任务的循环神经网络（RNN）和基于BERT的Transformer架构的免训练NAS指标。首先，我们开发了一种新的免训练度量，名为隐藏协方差，它可以预测RNN架构的训练性能，并显著优于现有的免训练度量。我们在NAS-Bench-NLP基准上对隐藏协方差指标的有效性进行了实验评估。其次，我们发现当前变压器架构的搜索空间范式并未针对免训练神经架构搜索进行优化。相反，简单的定性分析可以有效地将搜索空间缩小到性能最好的架构。这一结论是基于我们对现有的免训练指标和从最近的变压器剪枝文献中开发的新指标的研究，并在我们自己的训练有素的BERT架构基准上进行了评估。最终，我们的分析表明，为了获得有效的结果，必须同时开发架构搜索空间和免训练度量。我们的源代码在<https://github.com/aaronserianni/training-free-nas>。
 
     **关键词**：神经架构搜索
 
-23. ***[Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models](https://aclanthology.org/2023.acl-long.147.pdf)***        
+28. ***[Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models](https://aclanthology.org/2023.acl-long.147.pdf)***        
 
     **摘要**：大语言模型（LLMs）最近在各种NLP任务中表现出了令人印象深刻的性能。为了处理多步骤推理任务，Few-shot-chain-of-thought（CoT）提示包括一些手工制作的分步推理演示，这使得LLM能够明确地生成推理步骤，并提高其推理任务的准确性。为了减少人工操作，Zero-shot-CoT将目标问题陈述与*Let's think step by step*连接起来，作为LLMs的输入提示。尽管Zero-shot-CoT取得了成功，但它仍然存在三个缺陷：计算错误、漏步错误和语义误解错误。为了解决步骤遗漏错误，我们提出了计划与解决（PS）提示。它包括两个部分：首先，设计一个计划，将整个任务划分为更小的子任务，然后根据计划执行子任务。为了解决计算错误并提高推理步骤的质量，我们将PS提示扩展为更详细的指令，并衍生出PS+提示。我们在三个推理问题的十个数据集上评估了我们提出的提示策略。在GPT-3上的实验结果表明，在所有数据集上，我们提出的zero-shot提示策略始终远远优于zero-shot-CoT策略，与Zero-shot-Program-of-Thought提示策略相当或超过后者，并且在数学推理问题上与8-shot-CoT提示策略性能相当。代码见<https://github.com/AGI-Edgerunners/Plan-and-Solve-Prompting>。
 
     **关键词**：思维链；提示策略
 
-24. ***[Exploring Large Language Models for Classical Philology](https://aclanthology.org/2023.acl-long.846.pdf)***        
+29. ***[Exploring Large Language Models for Classical Philology](https://aclanthology.org/2023.acl-long.846.pdf)***        
 
     **摘要**：近来NLP领域的进步为包括古希腊语和拉丁语在内的许多语言创建了强大的语言模型。虽然之前关于古典语言的工作一致使用BERT，但在这项工作中，我们为古希腊语创建了四个语言模型，这些模型在两个维度上各不相同，以研究它们在古典语言感兴趣的任务中的通用性：我们探索了(i)使用RoBERTa和T5作为强模型类型的纯编码器和编码器-解码器架构，并为它们中的每一种创建了(ii)单语言古希腊语和包括拉丁语和英语在内的多语言实例。我们在形态和句法任务（包括词法化）上对所有模型进行了评估，这证明了T5解码能力的附加价值。我们进一步定义了两个探测任务，以研究在经典文本上预先训练的模型所获得的知识。我们的实验首次对现有的古希腊语模型进行了基准分析。结果表明，与SoTA相比，我们的模型有了明显的改进。对模型类型的系统分析可以为未来设计古希腊语言模型的研究提供信息，包括开发新的生成任务。我们将我们的所有模型作为社区资源提供给大家，同时提供一个大型的古希腊语预训练语料库，以支持为古典语言学建立一个更大的、可比较的模型库。
 
     **关键词**：古典语言
 
-25. ***[Learning Better Masking for Better Language Model Pre-training](https://aclanthology.org/2023.acl-long.400.pdf)***        
+30. ***[Learning Better Masking for Better Language Model Pre-training](https://aclanthology.org/2023.acl-long.400.pdf)***        
 
     **摘要**：掩码语言建模（MLM）已被广泛用作预训练语言模型（PrLMs）的去噪目标。现有的PrLMs通常采用随机token掩码策略，即在整个训练过程中采用固定的掩码率，不同的内容以相等的概率被屏蔽。然而，模型可能会受到训练前状态的复杂影响，随着训练时间的推移而发生相应的变化。在本文中，我们证明了这种对掩码比率和掩码内容的时变MLM设置不可能提供最优结果，这促使我们探索时变MLM设置的影响。我们提出了两种预定掩码方法，在不同训练阶段自适应地调整掩码率和掩码内容，从而提高了预训练的效率和在下游任务中验证的有效性。我们的工作是对掩码比和掩码内容的时变掩码策略的一项开创性研究，使我们更好地理解了掩码比和掩码内容如何影响MLM预训练。
 
     **关键词**：掩码设置方法
 
-26. ***[Explanation-based Finetuning Makes Models More Robust to Spurious Cues](https://aclanthology.org/2023.acl-long.242.pdf)***        
+31. ***[Explanation-based Finetuning Makes Models More Robust to Spurious Cues](https://aclanthology.org/2023.acl-long.242.pdf)***        
 
     **摘要**：大型语言模型（LLMs）功能强大，但它们有时会学习与任务无关的标签和特征之间的相关性，从而导致对分布外数据的泛化效果不佳。我们提出了基于解释的微调方法，作为一种通用方法来减轻LLM对虚假相关性的依赖。与标准微调不同的是，在标准微调中，模型仅预测输入的答案，而我们的微调则额外生成支持其答案的自由文本解释。为了评估我们的方法，我们在人为构建的包含不同类型虚假线索的训练集上对模型进行微调，并在不包含这些线索的测试集上对模型进行测试。与标准微调相比，我们的方法使GPT-3 (davinci)在四种分类任务中的准确率下降方面对虚假线索的鲁棒性明显提高：ComVE（+1.2）、CREAK（+9.1）、e-SNLI（+15.4）和SBIC（+6.5）。我们的方法在多个模型族和不同规模的模型中都有很好的效果，在大型模型中的效果更好。最后，我们的方法还能很好地使用模型生成的解释，这意味着它适用于更多没有人工编写解释的数据集。
 
     **关键词**：基于解释的微调方法
 
-27. ***[Multi-target Backdoor Attacks for Code Pre-trained Models](https://aclanthology.org/2023.acl-long.399.pdf)***        
+32. ***[Multi-target Backdoor Attacks for Code Pre-trained Models](https://aclanthology.org/2023.acl-long.399.pdf)***        
 
     **摘要**：由于代码智能的进步，针对神经代码模型的后门攻击已经获得了相当大的关注。然而，大多数现有工作都是在代码相关下游任务的特定任务数据中插入触发器，从而限制了攻击的范围。此外，大多数针对预训练模型的攻击都是为理解任务而设计的。在本文中，我们提出了针对代码预训练模型的任务无关后门攻击。我们的后门模型采用两种学习策略（即中毒Seq2Seq学习和标记表示学习）进行预训练，以支持下游代码理解和生成任务的多目标攻击。在部署阶段，受害者模型中植入的后门可以通过设计的触发器激活，从而实现有针对性的攻击。我们在七个数据集上的两个代码理解任务和三个代码生成任务中评估了我们的方法。广泛的实验结果表明，我们的方法能够有效、隐蔽地攻击与代码相关的下游任务。
 
     **关键词**：后门攻击
 
-28. ***[Large Language Models Are Reasoning Teachers](https://aclanthology.org/2023.acl-long.830.pdf)***        
+33. ***[Large Language Models Are Reasoning Teachers](https://aclanthology.org/2023.acl-long.830.pdf)***        
 
     **摘要**：最近的研究表明，思维链（CoT）提示可以诱导语言模型来逐步解决复杂的推理任务。然而，基于提示的CoT方法依赖于非常大的模型，如GPT-3 175B，这对于大规模部署来说是令人望而却步的。在本文中，我们使用这些大型模型作为推理教师，在较小的模型中实现复杂推理，并将模型大小要求降低几个数量级。我们提出了Fine-tune-CoT，一种从超大型教师模型中生成推理样本以微调较小模型的方法。我们在广泛的公共模型和复杂任务中评估了我们的方法。我们发现，Fine-tune-CoT能够在小型模型中实现强大的推理能力，在许多任务中远远优于基于提示的基线，甚至优于教师模型。此外，我们还利用教师模型为每个原始样本生成多个不同推理的能力扩展了我们的方法。通过这种多样化的推理来丰富微调数据，即使对于非常小的模型，也能在不同数据集上大幅提升性能。我们进行了消融和样本研究，以了解学生模型推理能力的出现。我们的代码实现和数据可在<https://github.com/itsnamgyu/reasoning-teacher。>
 
     **关键词**：思维链；Fine-tune-CoT；大模型指导
 
-29. ***[Did You Read the Instructions? Rethinking the Effectiveness of Task Definitions in Instruction Learning](https://aclanthology.org/2023.acl-long.172.pdf)***        
+34. ***[Did You Read the Instructions? Rethinking the Effectiveness of Task Definitions in Instruction Learning](https://aclanthology.org/2023.acl-long.172.pdf)***        
 
     **摘要**：大语言模型（LLM）在根据自然语言指令解决未知任务方面表现出了令人印象深刻的性能。然而，模型是否真正理解任务定义以及人类编写的定义是否是最优的，这些问题仍然不清楚。在本文中，我们系统地研究了任务定义在指令学习中的作用。我们首先根据人类注释进行了消减分析，以了解任务定义中哪些部分最重要，并发现只有当删除描述任务输出的内容，特别是标签信息时，模型性能才会大幅下降。接下来，我们提出了一种自动算法，将任务定义压缩到最小的支持标记集，并发现可以在保持甚至提高模型性能的同时去除60%的标记。基于这些结果，我们提出了两种策略来帮助模型更好地利用任务指令：(1)仅以通用的结构化格式提供任务的关键信息；(2)增加一个元调整阶段来帮助模型更好地理解定义。通过这两种策略，我们在119个未见测试任务中实现了4.2 Rouge-L的改进。
 
     **关键词**：自然语言指令；指令策略
 
-30. ***[How Do In-Context Examples Affect Compositional Generalization?](https://aclanthology.org/2023.acl-long.618.pdf)***        
+35. ***[How Do In-Context Examples Affect Compositional Generalization?](https://aclanthology.org/2023.acl-long.618.pdf)***        
 
     **摘要**：组合泛化——理解所见基元的未知组合——是人类智能的一种基本推理能力。人工智能界主要通过在大量训练样本上对神经网络进行微调来研究这种能力，而目前流行的基于大型语言模型的few-shot学习范式——上下文学习——是否以及如何表现出组合泛化能力尚不清楚。在本文中，我们介绍了CoFe，这是一个用于研究上下文构图泛化的测试套件。我们发现，组合泛化性能很容易受到上下文示例选择的影响，因此提出了一个研究问题：组合泛化的良好上下文示例的关键因素是什么？我们研究了三个潜在因素：相似性、多样性和复杂性。我们的系统实验表明，上下文示例应在结构上与测试用例相似、彼此不同且各自简单。此外，我们还发现了两个很强的局限性：对虚构词的上下文构词泛化比对常用词的泛化要弱很多；尽管骨干模型已经在大型语料库中进行了预训练，但上下文示例必须涵盖所需的语言结构，这一点仍然至关重要。我们希望我们的分析能够促进对上下文学习范式的理解和利用。
 
     **关键词**：组合泛化；上下文学习
 
-31. ***[Parameter-efficient Weight Ensembling Facilitates Task-level Knowledge Transfer](https://aclanthology.org/2023.acl-short.24.pdf)***        
+36. ***[Parameter-efficient Weight Ensembling Facilitates Task-level Knowledge Transfer](https://aclanthology.org/2023.acl-short.24.pdf)***        
 
     **摘要**：最近的研究表明，大规模预训练的语言模型可以以参数高效的方式有效地适应特定任务。经过训练的轻量级参数集（如适配器）可以作为一种能力与相应的模型轻松存储和共享。拥有许多轻量级参数后，我们专注于在任务间转移这些参数，以获得新任务性能的改善，其关键点在于获得任务间的相似性。在本文中，我们探索了5种参数高效的权重集合方法来实现这种可转移性，并验证了它们的有效性。这些方法从不同角度提取数据集信息和训练过的轻量级参数来获取任务间的相似性，并根据可比性对已有的轻量级参数进行加权，从而获得适合新任务初始化的模块。我们将其应用于三种参数高效调优方法，并在广泛的下游任务集上进行了测试。实验结果表明，我们的方法比基线方法提高了5%~8\%，在很大程度上促进了任务级的知识迁移。
 
     **关键词**：参数高效调整；知识迁移
 
-32. ***[Revisiting Token Dropping Strategy in Efficient BERT Pretraining](https://aclanthology.org/2023.acl-long.579.pdf)***        
+37. ***[Revisiting Token Dropping Strategy in Efficient BERT Pretraining](https://aclanthology.org/2023.acl-long.579.pdf)***        
 
     **摘要**：丢弃token是最近提出的一种策略，通过跳过几个中间层的输入token子集的计算来加速掩码语言模型（如BERT）的预训练。这种方法可以有效缩短训练时间，同时不会降低下游任务的性能。然而，我们通过实证研究发现，丢弃token容易造成语义损失问题，在处理语义密集型任务时表现不佳。受此启发，我们提出了一种简单而有效的语义一致性学习方法（ScTD）来改进token替换。ScTD旨在鼓励模型学习如何在表示空间中保留语义信息。在12个任务上进行的广泛实验表明，在我们的ScTD的帮助下，丢弃token可以在所有任务类型和模型大小上实现一致且显著的性能提升。更令人鼓舞的是，ScTD节省了多达57%的预训练时间，与传统的token替换相比，平均提高了+1.56%。
 
     **关键词**：语义一致性学习方法
 
-33. ***[Do Models Really Learn to Follow Instructions? An Empirical Study of Instruction Tuning](https://aclanthology.org/2023.acl-short.113.pdf)***        
+38. ***[Do Models Really Learn to Follow Instructions? An Empirical Study of Instruction Tuning](https://aclanthology.org/2023.acl-short.113.pdf)***        
 
     **摘要**：最近关于指令微调（IT）的研究已经取得了很好的性能，对未见过的任务具有zero-shot泛化的能力。通过向模型提供额外的上下文（如任务定义、示例）进行微调，这些模型取得了比未经微调的模型高得多的性能。尽管性能提升令人印象深刻，但模型从IT中学到了什么仍未得到充分研究。在这项工作中，我们通过比较模型训练中的修改指令与原始指令，分析了模型在IT过程中如何利用指令。具体来说，我们通过去除所有语义成分并仅保留输出空间信息来创建简化的任务定义，并创建包含错误输入输出映射的虚假示例。我们的实验表明，在简化的任务定义或虚假示例基础上训练的模型可以获得与在原始指令和示例基础上训练的模型相当的性能。此外，我们还引入了一个随机基线来执行zero-shot分类任务，并发现它在低资源环境下取得了与IT类似的性能（42.6%的精确匹配）（43%的精确匹配），而这两种方法都显著优于naive T5（30%的精确匹配）。我们的分析提供了证据，证明当前IT模型令人印象深刻的性能增益可能来自于拾取表面模式，例如学习输出格式和猜测。我们的研究强调了对更可靠的IT方法和评估的迫切需求。
 
     **关键词**：指令微调
 
-34. ***[Say What You Mean! Large Language Models Speak Too Positively about Negative Commonsense Knowledge](https://aclanthology.org/2023.acl-long.550.pdf)***        
+39. ***[Say What You Mean! Large Language Models Speak Too Positively about Negative Commonsense Knowledge](https://aclanthology.org/2023.acl-long.550.pdf)***        
 
     **摘要**：大语言模型（LLM）因其存储和利用正面知识的能力而被广泛研究。然而，诸如“狮子不生活在海洋里”等负面知识在世界上也无处不在，但却很少在文本中明确提及。LLMs对负面知识了解多少？这项工作研究了LLMs在负面常识知识方面的能力。我们设计了一个有限制的
     **关键词到句子生成任务（CG）和一个布尔问题回答任务（QA）来探究LLMs。我们的实验发现，LLMs经常无法生成基于负面常识知识的有效句子，但他们却能正确回答极性的“是”或“否”问题。我们将这种现象称为LLMs的信念冲突。我们的进一步分析表明，语言建模预训练中的统计捷径和否定报告偏差导致了这种冲突。
 
     **关键词**：负面知识；信念冲突
 
-35. ***[Mitigating Label Biases for In-context Learning](https://aclanthology.org/2023.acl-long.783.pdf)***        
+40. ***[Mitigating Label Biases for In-context Learning](https://aclanthology.org/2023.acl-long.783.pdf)***        
 
     **摘要**：上下文学习（ICL）的各种设计设置，例如上下文中示例的选择和顺序，都会使模型的预测产生偏差。尽管许多研究讨论了这些设计选择，但很少有系统的研究对其进行分类并减轻其影响。在这项工作中，我们定义了ICL文本分类中的三种标签偏差类型：虚标偏差、上下文标签偏差和域标签偏差（我们首次将其概念化并进行了检测）。我们的分析表明，先前的标签偏差校准方法无法解决所有三种类型的偏差。具体来说，无论选择何种上下文示例，领域标签偏差都会限制LLM在许多任务中的随机水平表现。为了减轻这些偏差的影响，我们提出了一种简单的偏差校准方法，即使用任务语料库中的随机域内词估计语言模型的标签偏差。在预测时控制这种估计偏差后，我们新颖的域语境校准方法显著提高了GPT-J和GPT-3在各种任务上的ICL性能。在具有较大领域标签偏差的任务上（在Macro-F1中高达37%），这种增益是巨大的。此外，我们的结果还可以推广到具有不同规模、预训练方法和人工设计任务指令的模型中，显示了标签偏差在ICL中的普遍性。
 
     **关键词**：上下文学习；标签偏差类型
 
-36. ***[Are You Copying My Model? Protecting the Copyright of Large Language Models for EaaS via Backdoor Watermark](https://aclanthology.org/2023.acl-long.423.pdf)***        
+41. ***[Are You Copying My Model? Protecting the Copyright of Large Language Models for EaaS via Backdoor Watermark](https://aclanthology.org/2023.acl-long.423.pdf)***        
 
     **摘要**：大型语言模型（LLMs）在文本理解和生成方面表现出强大的能力。一些公司已经开始提供基于这些LLM的嵌入即服务（EaaS），这将有利于客户完成各种自然语言处理（NLP）任务。然而，先前的研究表明，EaaS很容易受到模型提取攻击，这会给LLM的所有者造成巨大损失，因为训练这些模型的成本极其昂贵。为了保护EaaS的LLM版权，我们提出了一种名为 "嵌入水印"（Embedding Watermark）的方法。我们的方法从一般文本语料库中选取一组中等频率的词组成触发集，然后选取目标嵌入作为水印，并将其作为后门插入到包含触发词的文本嵌入中。插入的权重与文本中包含的触发词的数量成正比。这使得水印后门可以有效地转移到EaaS-窃取者的模型中进行版权验证，同时将对原始嵌入式的效用的不利影响降到最低。我们在各种数据集上的大量实验表明，我们的方法可以在不影响服务质量的前提下有效保护EaaS模型的版权。我们的代码在<https://github.com/yjw1029/EmbMarker>。
 
     **关键词**：EaaS；嵌入水印；版权保护
 
-37. ***[ThinkSum: Probabilistic reasoning over sets using large language models](https://aclanthology.org/2023.acl-long.68.pdf)***
+42. ***[ThinkSum: Probabilistic reasoning over sets using large language models](https://aclanthology.org/2023.acl-long.68.pdf)***
 
     **摘要**：大语言模型（LLMs）在高级类比推理方面具有很强的能力：在线性文本中再现训练数据中出现的模式（zero-shot评估）或在提供的上下文中出现的模式（few-shot上下文学习）。然而，最近的研究表明，即使是更高级的LLM，在需要对多个对象或事实进行推理并进行逻辑推理序列的场景中也会失败。我们提出了一种两阶段概率推理范式ThinkSum，它以结构化的方式对对象或事实集进行推理。在第一阶段（Think--关联检索），LLM对从提示或辅助模型调用中提取的一组短语进行并行查询。在第二阶段（Sum--概率推断或推理），这些查询的结果被汇总以进行最终预测。我们在LLM评估任务的BIG-bench套件中展示了ThinkSum的可能性和优势，在13个高难度任务中，ThinkSum比使用GPT-family模型的现有技术水平有所提高，通常使用的模型变体要小得多。我们还将ThinkSum与其他针对LLM直接提示的修改建议进行了比较和对比，例如思维链提示的变体。我们的研究结果表明，由于ThinkSum中的概率推理是在调用LLM之外进行的，因此ThinkSum对提示设计的敏感性较低，能够产生更多可解释的预测，并且能够灵活地与潜在变量模型相结合，从LLM中提取结构化知识。总之，我们提出的范式是增强LLM推理能力的一种有前途的方法。
 
     **关键词**：推理增强；两阶段概率推理；检索
 
-38. ***[Mixture-of-Domain-Adapters: Decoupling and Injecting Domain Knowledge to Pre-trained Language Models' Memories](https://aclanthology.org/2023.acl-long.280.pdf)***        
+43. ***[Mixture-of-Domain-Adapters: Decoupling and Injecting Domain Knowledge to Pre-trained Language Models' Memories](https://aclanthology.org/2023.acl-long.280.pdf)***        
 
     **摘要**：预训练语言模型（PLMs）在理解通用领域的文本方面表现出卓越的能力，但在特定领域却举步维艰。尽管在大型特定领域语料库上进行持续的预训练是有效的，但在该领域调整所有参数的成本很高。在本文中，我们研究了是否只需调整几个参数就能有效且高效地调整PLM。具体而言，我们将Transformer架构中的前馈网络（FFN）解耦为两部分：原始预训练的FFN，用于维护旧领域知识；我们新颖的特定领域适配器，用于并行注入特定领域知识。然后，我们采用混合适配器门动态融合来自不同领域适配器的知识。我们提出的混合领域适配器（MixDA）采用两阶段适配器调整策略，利用未标记数据和标记数据帮助领域适配：$i$）未标记数据上的特定领域适配器；其次是$ii$）标记数据上的特定任务适配器。MixDA可以无缝地插入到预训练-调谐范式中，我们的实验证明MixDA在域内任务(GLUE)、域外任务(ChemProt, RCT, IMDB, Amazon)和知识密集型任务(KILT)上都取得了优异的性能。进一步的分析证明了我们方法的可靠性、可扩展性和高效性。
 
     **关键词**：领域适配
 
-39. ***[LLM-Blender: Ensembling Large Language Models with Pairwise Ranking and Generative Fusion](https://aclanthology.org/2023.acl-long.792.pdf)***        
+44. ***[LLM-Blender: Ensembling Large Language Models with Pairwise Ranking and Generative Fusion](https://aclanthology.org/2023.acl-long.792.pdf)***        
 
     **摘要**：我们提出的LLM-Blender是一个集合框架，旨在通过利用多个开源大型语言模型（LLM）的不同优势来获得持续的卓越性能。我们的框架由两个模块组成：PairRanker和GenFuser，解决了不同示例的最佳LLM可能存在显著差异的问题。PairRanker采用专门的成对比较方法来区分候选输出之间的细微差别。它对输入文本和一对候选结果进行联合编码，使用交叉注意编码器来确定优选结果。我们的结果表明，PairRanker与基于ChatGPT的排名相关性最高。然后，GenFuser旨在合并排名靠前的候选词，通过利用它们的长处并减少它们的短处来产生改进的输出。为了便于大规模评估，我们引入了一个基准数据集MixInstruct，它是一个多指令混合数据集，具有oracle成对比较的特点。在各种指标上，我们的LLM-Blender明显优于单个LLM和基线方法，建立了一个实质性的性能差距。
 
     **关键词**：LLM集合框架；基准数据集
 
-40. ***[Making Language Models Better Reasoners with Step-Aware Verifier](https://aclanthology.org/2023.acl-long.291.pdf)***        
+45. ***[Making Language Models Better Reasoners with Step-Aware Verifier](https://aclanthology.org/2023.acl-long.291.pdf)***        
 
     **摘要**：few-shot学习是一项具有挑战性的任务，它要求语言模型从有限的示例中进行泛化。像GPT-3和PaLM这样的大型语言模型已经在这一领域取得了令人瞩目的进展，但它们在推理任务（如GSM8K，一种算术问题基准）中仍然面临困难。为了提高它们的推理能力，以前的工作已经提出在给出最终答案之前用提示来引导语言模型，从而在GSM8K上实现了问题解决率从17.9%到58.1%的显著提高。在本文中，我们介绍了DiVeRSe（推理步骤多样化验证器），这是一种进一步增强语言模型推理能力的新方法。DiVeRSe由三个主要部分组成：首先，它生成多样化的提示，以探索同一问题的不同推理路径；其次，它使用验证器根据加权投票方案过滤掉不正确的答案；第三，它单独验证每个推理步骤，而不是整个推理链。我们在最新的语言模型code-davinci-002上对DiVeRSe进行了评估，结果表明它在8个推理基准中的6个基准上取得了新的一流结果（例如，GSM8K 74.4%到83.2%）。
 
     **关键词**：推理增强；推理步骤多样化
 
-41. ***[Open-Domain Hierarchical Event Schema Induction by Incremental Prompting and Verification](https://aclanthology.org/2023.acl-long.312.pdf)***        
+46. ***[Open-Domain Hierarchical Event Schema Induction by Incremental Prompting and Verification](https://aclanthology.org/2023.acl-long.312.pdf)***        
 
     **摘要**：事件模式是一种关于事件典型进展的世界知识。最近的事件模式归纳方法使用信息提取系统从文档中构建大量事件图实例，然后从这些实例中学习归纳模式。与此相反，我们建议将事件模式视为一种常识性知识，可以从大型语言模型（LLM）中推导出来。这种新范式大大简化了模式归纳过程，使我们能够以一种简单的方式处理事件之间的层次关系和时间关系。由于事件模式具有复杂的图结构，我们设计了一种增量提示和验证方法IncPrompt，将复杂事件图的构建分解为三个阶段：事件骨架构建、事件扩展和事件-事件关系验证。与直接使用LLMs生成线性化图相比，IncSchema可以生成大型复杂模式，在时间关系方面提高了7.2%的F1，在层次关系方面提高了31.0%的F1。此外，与之前最先进的闭域模式归纳模型相比，人类评估者在将模式转化为连贯的故事时能够覆盖更多的事件（约10%），并且在可读性方面对我们的模式的评分高出1.3分（5分制）。
 
     **关键词**：事件模式；增量提示
 
-42. ***[Hierarchical Verbalizer for Few-Shot Hierarchical Text Classification](https://aclanthology.org/2023.acl-long.164.pdf)***        
+47. ***[Hierarchical Verbalizer for Few-Shot Hierarchical Text Classification](https://aclanthology.org/2023.acl-long.164.pdf)***        
 
     **摘要**：在实际应用中，由于复杂的标签层次结构和高昂的标签成本，分层文本分类（HTC）的性能较差，尤其是在低资源或少标签的情况下。最近，在预训练语言模型（PLMs）上应用提示的趋势越来越明显，这在少量平面文本分类任务中表现出了有效性。然而，当训练数据极度匮乏时，在HTC问题中研究基于提示的学习范式的工作还很有限。在这项工作中，我们定义了基于路径的少量文本分类设置，并建立了严格的基于路径的评价指标，以进一步探索少量文本分类任务。为了解决这个问题，我们提出了分层动词化器（"HierVerb"），这是一个多动词化器框架，将HTC视为多层单标签或多标签分类问题，并将学习向量视为受分层结构和分层对比学习约束的动词化器。通过这种方式，HierVerb将标签层次结构知识融合到动词化器中，显著优于那些通过图编码器注入层次结构的动词化器，最大限度地发挥了PLM的优势。在少数人参与的设置下，在三个流行的HTC数据集上进行的广泛实验表明，使用HierVerb的提示可以显著提高HTC的性能，同时为弥合大型预训练模型与下游层次分类任务之间的差距提供了一种优雅的方法。
 
     **关键词**：分层文本分类
 
-43. ***[HINT: Hypernetwork Instruction Tuning for Efficient Zero- and Few-Shot Generalisation](https://aclanthology.org/2023.acl-long.631.pdf)***        
+48. ***[HINT: Hypernetwork Instruction Tuning for Efficient Zero- and Few-Shot Generalisation](https://aclanthology.org/2023.acl-long.631.pdf)***        
 
     **摘要**：最近的NLP模型已经显示出卓越的能力，能够仅使用自然语言指令作为指导，有效地将zero-shot推广到新任务中。然而，由于依赖于将冗长的指令与每个输入示例连接起来，许多此类方法都存在计算成本高的问题，导致指令的重新处理成本高昂。为了避免这种情况，我们引入了用于指令微调的超网络（Hypernetworks for INstruction Tuning，HINT），它使用预训练的文本编码器将任务指令和示例转换为参数效率高的模块，插入到底层模型中，从而消除了在模型输入中包含指令的需要。HINT中的超网络也会产生编码指令，我们在解码过程中将其与编码输入串联，以进一步提高性能。在控制计算量（以FLOPs衡量）的情况下，HINT模型的性能超过最先进基线的10%。通过将指令转换为模块，HINT模型可以有效地忽略指令的长度和计算使用方面的少量示例输入。因此，HINT可以通过加入额外的少量数据将其性能提高25%，而计算用量仅增加5%。这结合了参数高效微调和上下文学习的优势。
 
     **关键词**：高效指令微调
 
-44. ***[Z-Code++: A Pre-trained Language Model Optimized for Abstractive Summarization](https://aclanthology.org/2023.acl-long.279.pdf)***        
+49. ***[Z-Code++: A Pre-trained Language Model Optimized for Abstractive Summarization](https://aclanthology.org/2023.acl-long.279.pdf)***        
 
     **摘要**：本文介绍了一种新的预训练语言模型Z-Code++，该模型针对抽象文本摘要进行了优化。该模型使用三种技术扩展了最先进的编码器-解码器模型。首先，我们使用两阶段预训练来提高模型在低资源摘要任务中的性能。首先使用文本语料库对模型进行语言理解预训练，然后继续使用摘要语料库对模型进行预训练，以生成基础文本。其次，我们用分离注意力层取代编码器中的自我注意力层，其中每个词使用两个向量表示，分别编码其内容和位置。第三，我们使用融合编码器，这是一种以分层方式对长序列进行编码的简单而有效的方法。Z-Code++在5种语言的13项文本总结任务中的9项创造了新的一流水平。我们的模型参数效率高，在XSum上优于600倍的PaLM540B，在SAMSum上优于200倍的GPT3175B。在zero-shot和few-shot设置中，我们的模型大大优于竞争模型。
 
     **关键词**：预训练模型；抽象摘要；分离注意力；融合编码器
 
-45. ***[Can Large Language Models Be an Alternative to Human Evaluations?](https://aclanthology.org/2023.acl-long.870.pdf)***        
+50. ***[Can Large Language Models Be an Alternative to Human Evaluations?](https://aclanthology.org/2023.acl-long.870.pdf)***        
 
     **摘要**：要评估机器学习模型生成的文本或人类撰写的文本的质量，人工评估是不可或缺和不可避免的。然而，人工评估很难再现，而且其质量也不稳定，这阻碍了不同自然语言处理（NLP）模型和算法之间的公平比较。最近，大型语言模型（LLM）在只提供任务指令的情况下，在未见任务中表现出了卓越的性能。在本文中，我们探讨了LLMs的这种能力是否可以用来替代人工评估。我们向LLM提供与人类评估完全相同的指令、待评估样本和问题，然后要求LLM生成对这些问题的响应；我们将此称为LLM评估。我们使用人工评估和LLM评估来评估两个NLP任务中的文本：开放式故事生成和对抗性攻击。我们发现，LLM评价的结果与专家人工评价的结果一致：人工专家评价较高的文本，LLM的评价也较高。我们还发现，LLM的评价结果在不同格式的任务指令和用于生成答案的抽样算法中都是稳定的。我们首次展示了使用LLM评估文本质量的潜力，并讨论了LLM评估的局限性和伦理考虑。
 
     **关键词**：LLM代替人工评估
 
-46. ***[Gradient Ascent Post-training Enhances Language Model Generalization](https://aclanthology.org/2023.acl-short.74.pdf)***        
+51. ***[Gradient Ascent Post-training Enhances Language Model Generalization](https://aclanthology.org/2023.acl-short.74.pdf)***        
 
     **摘要**：在这项工作中，我们通过实证研究表明，在随机、无标注的文本语料库上通过几步梯度上升后训练（GAP）更新预训练的LMs（350M, 1.3B, 2.7B），可以增强其在不同NLP任务中的zero-shot泛化能力。具体来说，我们发现，在12种不同的NLP任务中，GAP可以使LMs与2-3倍大的LMs相媲美。我们还表明，在非分布式语料库中应用GAP能够带来最可靠的性能改进。我们的研究结果表明，GAP是一种很有前途的方法，可以在不对特定任务进行微调的情况下提高LM的泛化能力。
 
     **关键词**：梯度上升训练；泛化能力增强
 
-47. ***[Knowledgeable Parameter Efficient Tuning Network for Commonsense Question Answering](https://aclanthology.org/2023.acl-long.503.pdf)***        
+52. ***[Knowledgeable Parameter Efficient Tuning Network for Commonsense Question Answering](https://aclanthology.org/2023.acl-long.503.pdf)***        
 
     **摘要**：常识性问题解答对于日常事务的决策非常重要。尽管现有的常识性问题解答工作基于完全微调的PLM，已经取得了可喜的成果，但它们存在计算成本过高以及可解释性差的问题。一些作品通过精心设计的GNN模块（需要专业知识），结合知识来提供特定证据，从而改进了PLMs。在本文中，我们提出了一种简单的知识参数高效微调网络，将PLM与外部知识相结合，用于常识性问题解答。具体来说，我们设计了一个可训练的参数共享适配器，该适配器与参数冻结PLM相连，以较小的成本纳入知识。该适配器通过两个与知识相关的辅助任务（即跨度掩蔽和关系辨别）同时配备了与实体和问题相关的知识。为了使适配器专注于相关知识，我们设计了门控和关注机制，以分别过滤和融合来自PLM的查询信息。在两个基准数据集上进行的广泛实验表明，KPE具有参数效率高的特点，能够有效地整合知识以改进常识性问题解答。
 
     **关键词**：常识性问题解答；参数共享适配器；知识注入
 
-48. ***[Latent Positional Information is in the Self-Attention Variance of Transformer Language Models Without Positional Embeddings](https://aclanthology.org/2023.acl-short.102.pdf)***        
+53. ***[Latent Positional Information is in the Self-Attention Variance of Transformer Language Models Without Positional Embeddings](https://aclanthology.org/2023.acl-short.102.pdf)***        
 
     **摘要**：在transformer语言模型中使用位置嵌入已被广泛接受。然而，最近的研究对这种嵌入的必要性提出了质疑。我们通过证明一个随机初始化和冻结的transformer语言模型，在没有位置嵌入的情况下，通过自我注意方差的缩小，固有地编码了强大的位置信息，从而进一步扩展了这一研究。为了量化这种差异，我们推导出了transformer层中每一步的基本分布。通过使用完全预训练模型进行经验验证，我们发现在大量梯度更新之后，方差收缩效应仍然存在。我们的发现证明了舍弃位置嵌入的决定是正确的，从而促进了transformer语言模型更有效的预训练。
 
     **关键词**：位置嵌入舍弃
 
-49. ***[Large Language Models Meet NL2Code: A Survey](https://aclanthology.org/2023.acl-long.411.pdf)***        
+54. ***[Large Language Models Meet NL2Code: A Survey](https://aclanthology.org/2023.acl-long.411.pdf)***        
 
     **摘要**：根据自然语言描述生成代码（或称NL2Code）的任务被认为是代码智能领域的一项紧迫而重大的挑战。由于预训练技术的快速发展，针对代码的大型语言模型不断涌现，推动了NL2Code的发展。为了促进该领域的进一步研究和应用，我们在本文中对现有的27种NL2Code大型语言模型进行了全面调查，并回顾了基准和指标。我们在HumanEval基准上对所有现有模型进行了直观的比较。通过深入的观察和分析，我们得出结论，NL2Code大型语言模型成功的关键因素是 "大型、优质数据、专家调优"。此外，我们还讨论了模型与人类之间的差距所带来的挑战和机遇。我们还创建了一个网站<https://nl2code.github.io>，通过众包追踪最新进展。据我们所知，这是第一份关于NL2Code大型语言模型的调查报告，我们相信它将为该领域的持续发展做出贡献。
 
     **关键词**：综述；代码生成
 
-50. ***[Rehearsal-free Continual Language Learning via Efficient Parameter Isolation](https://aclanthology.org/2023.acl-long.612.pdf)***        
+55. ***[Rehearsal-free Continual Language Learning via Efficient Parameter Isolation](https://aclanthology.org/2023.acl-long.612.pdf)***        
 
     **摘要**：我们研究了在学习一系列语言处理任务时如何避免灾难性遗忘的问题。与之前的方法相比，我们强调了不缓存历史任务数据的重要性，这使得问题更具挑战性。我们提出的方法采用参数隔离策略。对于每个任务，它分配一小部分私有参数，并通过一个共享的预训练模型来学习这些参数。为了在测试时加载正确的参数，我们引入了一种简单而有效的非参数方法。在持续语言学习基准上的实验表明，我们的方法明显优于所有现有的无数据缓存方法，并且与使用历史数据的方法相当（甚至更好）。
 
     **关键词**：灾难性遗忘；参数隔离
 
-51. ***[MISGENDERED: Limits of Large Language Models in Understanding Pronouns](https://aclanthology.org/2023.acl-long.293.pdf)***        
+56. ***[MISGENDERED: Limits of Large Language Models in Understanding Pronouns](https://aclanthology.org/2023.acl-long.293.pdf)***        
 
     **摘要**：语言技术中的性别偏见已被广泛研究，但研究大多局限于二元性别范式。考虑非二元性别身份也是至关重要的，因为将其排除在外可能会对已经被边缘化的群体造成进一步伤害。在本文中，我们全面评估了流行语言模型在正确使用英语中性代词（如单数they、them）和新代词（如ze、xe、thon）方面的能力，这些代词是那些性别身份不被二元代词所代表的个体所使用的。我们介绍了Misgendered，这是一个评估大型语言模型正确使用首选代词能力的框架，它包括（1）声明个人代词的实例，然后是一个缺少代词的句子，以及（2）使用统一方法评估屏蔽和自动回归语言模型的实验装置。当提示开箱即用时，语言模型在正确预测新代词（平均准确率为7.6%）和性别中性代词（平均准确率为31.0%）方面表现不佳。这种泛化能力的缺乏是由于在训练数据和记忆关联中缺乏对非二元代词的表示。在提示中使用明确示例进行少量适应性训练提高了性能，但对新代词的适应性仅为45.4%。我们在<https://tamannahossainkay.github.io/misgendered>上发布了完整的数据集、代码和演示。
 
     **关键词**：性别偏见；代词选择
 
-52. ***[ALERT: Adapt Language Models to Reasoning Tasks](https://aclanthology.org/2023.acl-long.60.pdf)***        
+57. ***[ALERT: Adapt Language Models to Reasoning Tasks](https://aclanthology.org/2023.acl-long.60.pdf)***        
 
     **摘要**：大型语言模型的最新进展使它们能够在复杂的任务中表现出色，这些任务需要通过few-shot学习进行逐步推理。然而，目前还不清楚这些模型是在应用它们在预训练中学习到的推理技能，还是它们只是在更精细的粒度上记忆它们的训练语料库，并且已经学会更好地理解它们的上下文。为了解决这个问题，我们引入了ALERT模型，一个评估语言模型推理能力的基准和分析套件。ALERT能够在需要推理能力的复杂任务上比较预训练模型和微调模型。我们的基准提供了一个测试平台来评估任何语言模型的细粒度推理技能，它跨越了20多个数据集，涵盖了10种不同的推理技能。通过使用ALERT，我们进一步研究了微调的作用。我们广泛的实证分析表明，与预训练阶段相比，语言模型在微调阶段学习到了更多的推理技能，如文本蕴涵、归纳推理和类比推理。然而，我们也发现，当语言模型被微调时，它们倾向于过度拟合提示模板，这损害了模型的鲁棒性，导致泛化问题。
 
     **关键词**：推理能力评估
 
-53. ***[Revisiting Relation Extraction in the era of Large Language Models](https://aclanthology.org/2023.acl-long.868.pdf)***        
+58. ***[Revisiting Relation Extraction in the era of Large Language Models](https://aclanthology.org/2023.acl-long.868.pdf)***        
 
     **摘要**：关系提取（RE）是从文本中推断实体之间语义关系的NLP核心任务。标准的监督关系提取技术需要训练模块来标记包含实体跨度的标记词，然后预测它们之间的关系。最近的工作将这一问题作为序列到序列的任务来处理，将实体之间的关系线性化为目标字符串，并根据输入条件生成。在这里，我们挑战了这种方法的极限，使用了比之前的工作更大的语言模型（GPT-3和Flan-T5 large），并在不同的监督水平下评估了它们在标准RE任务中的性能。我们通过进行人工评估，而不是依赖精确匹配，解决了评估RE生成方法的固有问题。在这种完善的评估下，我们发现(1)使用GPT-3进行的少量提示实现了接近SOTA的性能，即与现有的完全监督模型大致相当；(2)Flan-T5在少量提示设置中的能力较弱，但是使用思维链（CoT）风格的解释（通过GPT-3生成）对其进行监督和微调可以获得SOTA的结果。我们将该模型作为RE任务的新基准发布。
 
     **关键词**：关系提取
 
-54. ***[Unnatural Instructions: Tuning Language Models with (Almost) No Human Labor](https://aclanthology.org/2023.acl-long.806.pdf)***        
+59. ***[Unnatural Instructions: Tuning Language Models with (Almost) No Human Labor](https://aclanthology.org/2023.acl-long.806.pdf)***        
 
     **摘要**：指令微调使预训练的语言模型能够根据推理时的自然语言描述执行新任务。这些方法依赖于大量以众包数据集或用户交互为形式的人工监督。在这项工作中，我们引入了“非自然指令”（Unnatural Instructions）：这是一个包含各种创造性指令的大型数据集，几乎不需要人工干预。我们收集了64,000个示例，通过向语言模型提示三个指令种子示例并诱发第四个示例。然后，通过提示模型重新表述每条指令来扩展该数据集，总共创建了约240,000个指令、输入和输出示例。实验表明，尽管Unnatural Instructions包含了相当数量的噪声，但它的训练效果可以与在开源人工合成数据集上的训练效果相媲美，在各种基准测试中超过了T0++和Tk-Instruct等模型的性能。这些结果证明了模型生成的数据作为众包数据集扩展和多样化的一种具有成本效益的替代方法的潜力。
 
     **关键词**：指令数据集；模型生成数据
 
-55. ***[RL4F: Generating Natural Language Feedback with Reinforcement Learning for Repairing Model Outputs](https://aclanthology.org/2023.acl-long.427.pdf)***        
+60. ***[RL4F: Generating Natural Language Feedback with Reinforcement Learning for Repairing Model Outputs](https://aclanthology.org/2023.acl-long.427.pdf)***        
 
     **摘要**：尽管语言模型取得了前所未有的成功，但即使是最大型的语言模型也会犯错误。与人类利用反馈进行学习和改进的方式类似，以前的工作也提出为语言模型提供自然语言反馈，以指导它们修复输出结果。由于获取人类生成的批评意见成本高昂，研究人员设计了学习型批评意见生成器来代替人类批评意见，同时假设人们可以训练下游模型来利用生成的反馈意见。然而，这种方法并不适用于黑盒或有限访问模型，如ChatGPT，因为它们无法进行微调。此外，在大型通用语言代理时代，微调既不具有计算效率，也不具有空间效率，因为它会导致网络的多个副本。在这项工作中，我们引入了RL4F（反馈强化学习），它是一个多代理协作框架，在该框架中，评论生成器被训练为最大化GPT-3的最终任务性能，GPT-3是一个固定模型，其大小是评论生成器的200多倍。RL4F产生的批评有助于GPT-3修正其输出。我们研究了行动规划、总结和字母化的三个数据集，结果表明，与其他基于学习、检索增强或提示的批判生成器相比，RL4F在多个文本相似度指标上的相对改进高达10%。
 
     **关键词**：反馈强化学习；评论生成器；修正输出
 
-56. ***[From Characters to Words: Hierarchical Pre-trained Language Model for Open-vocabulary Language Understanding](https://aclanthology.org/2023.acl-long.200.pdf)***        
+61. ***[From Characters to Words: Hierarchical Pre-trained Language Model for Open-vocabulary Language Understanding](https://aclanthology.org/2023.acl-long.200.pdf)***        
 
     **摘要**：目前最先进的自然语言理解模型需要一个预处理步骤，将原始文本转换为离散的标记。这一过程被称为标记化（tokenization），依赖于预先建立的单词或子单词语素词汇。这种固定词汇限制了模型对拼写错误的鲁棒性以及适应新领域的能力。在这项工作中，我们引入了一种新颖的开放词汇语言模型，该模型采用了分层的两级方法：一个是词级，另一个是序列级。具体来说，我们设计了一个词内模块，该模块使用浅层transformer架构从字符中学习词的表示，以及一个深层词间transformer模块，该模块通过关注整个词序列来上下文化每个词的表示。因此，我们的模型可直接在字符序列上进行操作，同时明确意识到单词的边界，但不偏重子单词或单词级词汇。各种下游任务的实验表明，我们的方法优于强大的基线方法。我们还证明，我们的分层模型对文本损坏和领域转移具有鲁棒性。
 
     **关键词**：开放词汇语言模型
 
-57. ***[Few-shot In-context Learning on Knowledge Base Question Answering](https://aclanthology.org/2023.acl-long.385.pdf)***        
+62. ***[Few-shot In-context Learning on Knowledge Base Question Answering](https://aclanthology.org/2023.acl-long.385.pdf)***        
 
     **摘要**：知识库问题解答被认为是一个难题，因为它面临着对各种可能的自然语言问题进行泛化的挑战。此外，不同知识库之间知识库模式项的异质性往往要求对不同的知识库问题解答（KBQA）数据集进行专门的训练。为了用一个统一的免训练框架来处理不同知识库问题集上的问题，我们提出了KB-BINDER，它首次实现了知识库问题集任务的few-shot上下文学习。首先，KB-BINDER利用像Codex这样的大型语言模型，通过模仿一些示范来生成逻辑形式作为特定问题的草稿。其次，KB-BINDER以知识库为基础，通过BM25分数匹配将生成的草稿绑定到可执行的草稿上。在4个公开的异构KBQA数据集上的实验结果表明，KB-BINDER可以在仅有少量上下文演示的情况下实现很强的性能。特别是在GraphQA和3-hop MetaQA上，KB-BINDER的表现甚至超过了最先进的训练模型。在GrailQA和WebQSP上，我们的模型也与其他完全训练过的模型相当。我们相信KB-BINDER可以作为未来研究的重要基准。我们计划公布所有代码和数据。我们的代码在<https://github.com/ltl3A87/KB-BINDER>。
 
     **关键词**：知识库问题解答；上下文学习
 
-58. ***[Revisiting Automated Prompting: Are We Actually Doing Better?](https://aclanthology.org/2023.acl-short.155.pdf)***        
+63. ***[Revisiting Automated Prompting: Are We Actually Doing Better?](https://aclanthology.org/2023.acl-short.155.pdf)***        
 
     **摘要**：目前的文献表明，大型语言模型（LLM）是优秀的few-shot学习者，在few-shot学习环境中，提示可以显著提高它们在一系列下游任务中的性能。随后，我们尝试将人工提示自动化，并取得了一些进展。特别是，随后的工作表明，在某些K-shot学习场景中，自动化可以优于微调。在本文中，我们在六个不同的下游任务和更大范围的K-shot学习设置中重新研究了自动提示技术。我们发现，自动提示并不能始终优于简单的人工提示。我们的工作表明，除了微调之外，人工提示应作为该研究领域的基准。
 
     **关键词**：自动提示
 
-59. ***[Controlling the Extraction of Memorized Data from Large Language Models via Prompt-Tuning](https://aclanthology.org/2023.acl-short.129.pdf)***        
+64. ***[Controlling the Extraction of Memorized Data from Large Language Models via Prompt-Tuning](https://aclanthology.org/2023.acl-short.129.pdf)***        
 
     **摘要**：众所周知，大型语言模型（LLM）会记忆大量的训练数据。部分记忆内容已被证明可以通过简单查询模型提取出来，这就带来了隐私风险。我们提出了一种新颖的方法，利用提示调整来控制LLM中记忆内容的提取率。我们提出了提高和降低提取率的两种提示训练策略，分别对应于攻击和防御。我们使用GPT-Neo系列模型在一个公共基准上演示了我们技术的有效性。对于1.3B参数的GPT-Neo模型，与基线相比，我们的攻击使提取率提高了9.3个百分点。我们的防御可以通过用户指定的超参数进行调整，以实现不同的隐私-效用权衡。与基线相比，我们的提取率降低了97.7%，复杂度增加了16.9%。
 
     **关键词**：记忆提取
 
-60. ***[DISCO: Distilling Counterfactuals with Large Language Models](https://aclanthology.org/2023.acl-long.302.pdf)***        
+65. ***[DISCO: Distilling Counterfactuals with Large Language Models](https://aclanthology.org/2023.acl-long.302.pdf)***        
 
     **摘要**：使用反事实增强数据训练的模型可以学习任务因果结构的表征，从而实现稳健的泛化。然而，对于大多数任务而言，高质量的反事实数据非常稀缺，且不易大规模生成。如果是众包数据，这种数据的规模和多样性通常有限；如果是使用监督方法生成的数据，要扩展到新的反事实维度，计算成本很高。在这项工作中，我们介绍了DISCO（DIStilled COunterfactual Data），一种大规模自动生成高质量反事实数据的新方法。DISCO通过一个大型通用语言模型来生成短语扰动。然后，特定任务的教师模型对这些生成的数据进行过滤，从而提炼出高质量的反事实数据。虽然与任务无关，但我们将我们的管道应用于自然语言推理（NLI）任务，并发现在NLI压力测试等具有挑战性的评估中，与未经数据增强训练的模型相比，使用DISCO生成的反事实数据训练的相对较小的学生模型更加稳健（绝对值为6%），并且在不同分布之间的泛化效果更好（2%）。此外，DISCO增强模型在三个评估集上的反事实对之间的一致性提高了10%，这表明DISCO增强使模型能够更可靠地学习因果表征。我们的资料库可在以下网址获得：<https://github.com/eric11eca/disco>
 
     **关键词**：反事实数据；数据生成
 
-61. ***[AutoConv: Automatically Generating Information-seeking Conversations with Large Language Models](https://aclanthology.org/2023.acl-short.149.pdf)***        
+66. ***[AutoConv: Automatically Generating Information-seeking Conversations with Large Language Models](https://aclanthology.org/2023.acl-short.149.pdf)***        
 
     **摘要**：通过对话帮助用户收集信息的“信息搜索对话”近年来取得了长足的进步。然而，由于训练数据的匮乏，这项研究仍然受阻。为了解决这一问题，我们提出了AutoConv合成会话生成方法，该方法利用了大语言模型（LLM）的few-shot学习能力和生成能力。具体来说，我们将对话生成问题表述为一个语言建模任务，然后利用一些人类对话对LLM进行微调，以捕捉信息搜索过程的特征，并利用它生成高质量的合成对话。在两个常用数据集上的实验结果验证了AutoConv比强基线有很大改进，并减轻了对人类注释的依赖。此外，我们还提供了一些分析研究，以促进未来的研究。
 
     **关键词**：信息搜索对话
 
-62. ***[NarrowBERT: Accelerating Masked Language Model Pretraining and Inference](https://aclanthology.org/2023.acl-short.146.pdf)***        
+67. ***[NarrowBERT: Accelerating Masked Language Model Pretraining and Inference](https://aclanthology.org/2023.acl-short.146.pdf)***        
 
     **摘要**：大规模语言模型预训练是自然语言处理中一种非常成功的自监督学习形式，但随着模型和预训练语料库的不断扩大，其执行成本也越来越高。我们提出的NarrowBERT是一种改进的transformer编码器，可将掩码语言模型预训练的吞吐量提高2倍以上。NarrowBERT对transformer模型进行了稀疏化处理，使得自注意查询和前馈层在预训练过程中只对每个句子的屏蔽词组进行操作，而不是像通常的transformer编码器那样对所有词组进行操作。我们还表明，NarrowBERT将推理时的吞吐量提高了3.5倍之多，而在MNLI等句子编码任务上的性能下降却很小（或没有）。最后，我们检验了NarrowBERT在IMDB和Amazon评论分类以及CoNLL NER任务中的性能，结果表明它与标准BERT的性能相当。
 
